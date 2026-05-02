@@ -1,0 +1,12 @@
+<h1>Edit Runner</h1>
+<%= form_for @runner do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+  <%= f.label :email %>
+  <%= f.email_field :email %>
+  <%= f.label :age %>
+  <%= f.number_field :age %>
+  <%= f.label :team_id, 'Team' %>
+  <%= f.collection_select :team_id, Team.all, :id, :name, include_blank: true %>
+  <%= f.submit 'Update Runner' %>
+<% end %>

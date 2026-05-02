@@ -1,0 +1,23 @@
+<% provide(:title, "Registered Runners") %> <!-- Update title -->
+<h1>List of Registered Runners</h1>
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Age</th>
+      <th>Team</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @runners.each do |runner| %>
+      <tr>
+        <td><%= runner.name %></td>
+        <td><%= runner.email %></td>
+        <td><%= runner.age %></td>
+        <td><%= runner.team.name if runner.team %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<%= link_to "Home", root_path, class: "btn btn-lg btn-primary" %>
